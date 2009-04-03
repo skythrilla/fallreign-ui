@@ -1,0 +1,7 @@
+#nugget
+  %h1
+    = @article.title
+  %p
+    = RedCloth.new(@article.body).to_html
+                     
+= link_to 'Back', "/admin"

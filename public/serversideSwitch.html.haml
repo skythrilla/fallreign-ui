@@ -1,0 +1,27 @@
+!!! Strict
+%html{ :lang => "en-uk", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html; charset=iso-8859-1", "http-equiv" => "Content-Type" }
+    = css_include_tag :master, :rel => "stylesheet"
+    /%link{ :href => "stylesheets/master.css", :title => "styles1", :rel => "stylesheet", :type => "text/css", :media => "screen" }
+    %title
+      Serverside stylesheet switcher
+  %body
+    %h1
+      Stylesheet switcher using jQuery
+    %p
+      This page can be used so that the stylesheet switcher degrades gracefully where Javascript is disabled or the level of Javascript support isn't high enough to support the stylesheet switcher (e.g.
+      %a{ :href => "http://www.jquery.com/" }
+        jQuery
+      isn't supported).
+    %p
+      You can program this page in whatever serverside language you prefer. A cookie called "style" should be set to the value of the querystring parameter "style". The page should then redirect to it's referrer.
+    %p
+      Then when serving up any other page on your site you will need to set the "rel" attribute of all not selected stylesheet links (e.g. ones whose title isn't the value of the cookie style) to "alternate stylesheet".
+    %p
+      %strong
+        NOTE:
+      this page and process is only necessary if you care about the small percentage of users that the stylesheet switcher won't work for. You could also just display a message on this page informing the user that they need to enable JavaScript in their browser or to download a better broswer from
+      %a{ :href => "http://www.mozilla.com/firefox/" }
+        here
+      \.

@@ -1,0 +1,36 @@
+= js_include_tag :admin
+
+#nugget
+  
+  #admin_action_bar
+    %dl
+      %dt
+        %a{ :href => "#" }
+          %h2 Artists
+      %dd
+        = partial :artists
+           
+      %dt  
+        %a{ :href => "#" }
+          %h2 Albums
+      %dd
+        = partial :albums
+      
+      %dt  
+        %a{ :href => "#" }
+          %h2 Articles
+      %dd
+        = partial :articles
+    
+      %dt  
+        %a{ :href => "#" }
+          %h2 Links
+      %dd
+        = partial :links
+           
+      %dt  
+        %a{ :href => "#" }
+          %h2 Gallery
+      %dd
+        = partial :gallery    
+                          

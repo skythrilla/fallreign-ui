@@ -1,0 +1,22 @@
+#nugget
+  %h1
+    = image_tag @artist.image.url(:medium)
+    = @artist.name 
+  %p
+    = link_to 'Homepage', "#{@artist.external_links}"
+  %p
+    = @artist.bio                
+  %h3 Albums
+  %hr                                           
+  %br
+  - @artist.albums.each do |album|
+    %a{:href => "/albums/#{album.id}"}
+      = image_tag album.image.url(:small)
+    %br                                              
+    = album.release_year
+    %br
+    = album.title
+    %br
+    %br
+
+= link_to 'Back', url(:artists)  

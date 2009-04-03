@@ -1,0 +1,19 @@
+
+= error_messages_for @artist
+
+= form_for(@artist, :action => url(:artist, @artist)) do
+  #title Edit Artist
+  .row
+  = text_field :name, :label => "Name: "
+  .row
+  = text_area :bio, :label => "Description/Bio: "
+  .row
+  = text_field :external_links, :label => "Links/Homepage: "
+  .row
+  = file_field :image, :label => "Image:&nbsp;" 
+  .submit
+  = submit "Update"
+
+= link_to 'Show', url(:artist, @artist)
+|
+= link_to 'Back', url(:artists)

@@ -1,0 +1,13 @@
+= error_messages_for @article
+
+= form_for(@article, :action => url(:articles) ) do
+  #title New Article
+  .row
+  = text_field :title, :label => "Title: "
+  .row
+  = text_area :body, :label => "Body: ", :rows => "20", :cols => "80"
+  .submit
+  = submit "Create"
+
+= link_to 'Back', url(:articles)
+

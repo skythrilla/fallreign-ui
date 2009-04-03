@@ -1,0 +1,53 @@
+!!! 1.1
+%html{ html_attrs("en_us") }
+  %head
+    %title Fall Reign Records
+    %meta{ :content => "text/html;charset=utf-8", "http-equiv" => "Content-Type"}/
+    = css_include_tag :reset_fonts_grids, :lavalamp3, :styles2, :styles3, :styles4, :master, :rel => "stylesheet"
+    = js_include_tag :ga, :jquery, :"jquery.easing.1.3", :"jquery.lavalamp.1.3.2", :application, :styleswitch
+    /%link{ :href => "stylesheets/master.css", :title => "styles1", :rel => "stylesheet", :media => "screen" }
+    %link{ :href => "stylesheets/styles2.css", :title => "styles2", :rel => "alternate stylesheet", :media => "screen" }
+    %link{ :href => "stylesheets/styles3.css", :title => "styles3", :rel => "alternate stylesheet", :media => "screen" }
+    %link{ :href => "stylesheets/styles4.css", :title => "styles4", :rel => "alternate stylesheet", :media => "screen" }
+
+  %body 
+    #doc2.yui-t2
+      #hd
+        %a{ :href => "/" }        
+          %img#logo{ :src => "/images/fall_reign_logo.gif", :height => "140px" }                             
+          %img{:src => '/images/tree_branch.png'}
+          /%center
+          /%img#header{:src => "/images/fr_header.png"}
+          /%img#banner{:src => "/images/fr_header.jpg"}
+  
+      %ul#lavaLampBasicImage.lamp
+        - %w[ Home Catalog Artists Gallery Links Contact ].each do |nav|         
+          %li
+            = link_to "#{nav}", "/#{nav.downcase}"
+            
+      #bd
+        #yui-main          
+          = catch_content :for_layout                
+      
+      #ft
+        %hr
+        .left             
+          brought to you by:
+          %a{:href=>"http://peoplewholikejazz.com"} 
+            people who like jazz
+          %ul
+          = link_to "admin", "/admin"
+
+        .right
+          &copy; 2009 
+          %a{ :href => "/"}
+            fall reign&nbsp;&nbsp;
+          %ul
+          %a.styleswitch{ :href => "serversideSwitch.html?style=style1", :rel => "styles1" }
+            Theme1
+          %a.styleswitch{ :href => "serversideSwitch.html?style=style2", :rel => "styles2" }
+            Theme2
+          %a.styleswitch{ :href => "serversideSwitch.html?style=style3", :rel => "styles3" }
+            Theme3
+          %a.styleswitch{ :href => "serversideSwitch.html?style=style4", :rel => "styles4" }
+            Theme4
